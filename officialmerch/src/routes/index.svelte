@@ -1,13 +1,15 @@
 <script>
-	import supabase from '$lib/db';
 
-	async function getOrgs() {
-		return supabase.from('organization').select(`name`).eq('is_public', true);
-	}
+	import NavBar from '../components/NavBar.svelte';
+	
+	import BaseOrgs from '../components/BaseOrgs.svelte'
+
+	// import { dataset_dev } from 'svelte/internal';
+
+
 </script>
 
-{#await getOrgs()}
-	Loading..
-{:then response}
-	<pre>{JSON.stringify(response, null, 2)}</pre>
-{/await}
+<NavBar></NavBar>
+<BaseOrgs></BaseOrgs>
+
+
